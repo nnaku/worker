@@ -156,7 +156,7 @@ with j as (
     and task_id = any($2::int[])
     ${queueClause}
     ${flagsClause}
-    order by priority asc, run_at asc
+    order by priority asc, run_at asc, id asc
     limit 1
     for update
     skip locked
